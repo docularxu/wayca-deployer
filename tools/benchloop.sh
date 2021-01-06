@@ -24,8 +24,7 @@ echo $memnode_stride
 COMMAND=${CMD:-"./bw_mem"}
 PARAMETERS=${PARAM:-"1024m bcopy"}
 
-echo $COMMAND
-echo $PARAMETERS
+echo "Running benchmark: $COMMAND $PARAMETERS"
 
 for (( k=cpu_start; k<=cpu_end; k+=cpu_stride ))
 do
@@ -33,7 +32,8 @@ do
 for (( m=memnode_start; m<=memnode_end; m+=memnode_stride))
 do
 
-echo "CPU no. " $k " ; Memnode no. " $m $COMMAND $PARAMETERS
+result=$(numactl --physcpubind=$k --membind=$m $COMMAND $PARAMETERS 2>&1)
+echo "CPU $k; Memnode $m; result: $result"
 
 done
 done
