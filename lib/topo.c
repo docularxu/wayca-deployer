@@ -1,34 +1,101 @@
 /*
  * TODO: read the topology from sysfs
  */
+#include <sys/types.h>
+#include <dirent.h>
+#include <string.h>
+
+static int nb_cores_in_ccl = -1;
+static int nb_cores_in_node = -1;
+static int nb_cores_in_package = -1;
+static int nb_cores_in_total = -1;
+static int nb_nodes_in_package = -1;
+static int nb_nodes_in_total = -1;
+
+#define NODE_FNAME 	"/sys/devices/system/node"
+#define CPU_FNAME 	"/sys/devices/system/cpu"
+
+int topo_init(void)
+{
+	DIR *dir;
+	struct dirent *dirent;
+	unsigned long idx;
+	char *endptr;
+
+	/* find number of nodes in total
+	 *  - loop through NODE_FNAME, and count the number of node* subdirectoires. I.E.
+	 *  # cd $NODE_FNAME
+	 *  # ls -d node* | grep -E -- '^node[0-9]' | wc --words
+	 */
+	dir = opendir(NODE_FNAME);
+	if (!dir)
+		return 0;
+
+	nb_nodes_in_total = 0;
+	while ((dirent = readdir(dir)) != NULL) {
+		if (strncmp(dirent->d_name, "node", 4))
+			continue;
+		idx = strtoul(dirent->d_name+4, &endptr, 0);
+		if (endptr == dirent->d_name+4) /* not a number */
+			continue;
+		nb_nodes_in_total ++;
+	}
+	closedir(dir);
+
+	/* find nodes in package */
+	TODO ?  nb_nodes_in_package?
+
+	/* find number of cores in total
+	 *  - loop through CPU_FNAME, and count the number of cpu* subdirectories. IE.
+	 *  # cd $CPU_FNAME
+	 *  # ls -d cpu* | grep -E -- '^cpu[0-9]' | wc --words
+	 */
+	dir = opendir(CPU_FNAME);
+	if (!dir)
+		return 0;
+
+	nb_cores_in_total = 0;
+	while ((dirent = readdir(dir)) != NULL) {
+		if (strncmp(dirent->d_name, "cpu", 3))
+			continue;
+		idx = strtoul(dirent->d_name+3, &endptr, 0);
+		if (endptr == dirent->d_name+3) /* not a number */
+			continue;
+		nb_cores_in_total ++;
+		/* there could be other things that we can do for a cpu* directory */
+		TODO
+	}
+	closedir(dir);
+}
+
 int cores_in_ccl(void)
 {
-	return 4;
+	return nb_cores_in_ccl;
 }
 
 int cores_in_node(void)
 {
-	return 24;
+	return nb_cores_in_node;
 }
 
 int cores_in_package(void)
 {
-	return 48;
+	return nb_cores_in_package;
 }
 
 int cores_in_total(void)
 {
-	return 96;
+	return nb_cores_in_total;
 }
 
 int nodes_in_package(void)
 {
-	return 2;
+	return nb_nodes_in_package;
 }
 
 int nodes_in_total(void)
 {
-	return 4;
+	return nb_nodes_in_total;
 }
 
 /* memory bandwidth (relative value) of speading over multiple CCLs
@@ -154,5 +221,5 @@ int pipe_latency_CCL[3] = {
 int pipe_latency_NUMA[4] = {
 	/* Same NUMA | Neighbor | Remote | Remote *
 	 * diff CCLs |  NUMAs   | NUMA0  | NUMA1  */
-TBD
+'TBD
 };
