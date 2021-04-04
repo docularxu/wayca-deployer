@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set -x
+set -x
 
 # The benchmarking command to run
 COMMAND=${CMD:-"/home/guodong/attractivechaos.benchmarks.git/lock/lock_test"}
