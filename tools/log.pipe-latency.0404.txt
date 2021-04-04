@@ -1,0 +1,164 @@
+
++ doit /home/guodong/lmbench-3.0-a9/bin/lat_pipe '' '-W 1 -N 4' 1,0 1,4 1,8 1,12 1,16 1,20 0,0
++ cmd=/home/guodong/lmbench-3.0-a9/bin/lat_pipe
++ extra_param=
++ param='-W 1 -N 4'
++ shift 3
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=1,0 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 10.3585 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=1,4 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.7567 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=1,8 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.7207 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=1,12 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.7727 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=1,16 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.7444 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=1,20 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.7309 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,0 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.8581 microseconds
++ doit /home/guodong/lmbench-3.0-a9/bin/lat_pipe '' '-W 1 -N 4' 5,0 5,4 5,8 5,12 5,16 5,20 4,4
++ cmd=/home/guodong/lmbench-3.0-a9/bin/lat_pipe
++ extra_param=
++ param='-W 1 -N 4'
++ shift 3
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=5,0 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.6553 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=5,4 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 10.2520 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=5,8 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.5479 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=5,12 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.4020 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=5,16 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.6910 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=5,20 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.7014 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=4,4 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.8362 microseconds
++ doit /home/guodong/lmbench-3.0-a9/bin/lat_pipe '' '-W 1 -N 4' 9,0 9,4 9,8 9,12 9,16 9,20 8,8
++ cmd=/home/guodong/lmbench-3.0-a9/bin/lat_pipe
++ extra_param=
++ param='-W 1 -N 4'
++ shift 3
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=9,0 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.6990 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=9,4 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.6415 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=9,8 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 10.1423 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=9,12 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.7197 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=9,16 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.5435 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=9,20 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.8594 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=8,8 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.9150 microseconds
++ doit /home/guodong/lmbench-3.0-a9/bin/lat_pipe '' '-W 1 -N 4' 13,0 13,4 13,8 13,12 13,16 13,20 12,12
++ cmd=/home/guodong/lmbench-3.0-a9/bin/lat_pipe
++ extra_param=
++ param='-W 1 -N 4'
++ shift 3
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=13,0 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.5461 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=13,4 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.5998 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=13,8 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.5784 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=13,12 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 10.2909 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=13,16 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.7242 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=13,20 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.7709 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=12,12 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.8385 microseconds
++ doit /home/guodong/lmbench-3.0-a9/bin/lat_pipe '' '-W 1 -N 4' 17,0 17,4 17,8 17,12 17,16 17,20 16,16
++ cmd=/home/guodong/lmbench-3.0-a9/bin/lat_pipe
++ extra_param=
++ param='-W 1 -N 4'
++ shift 3
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=17,0 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.4393 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=17,4 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.6966 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=17,8 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.5742 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=17,12 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.6576 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=17,16 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 10.0853 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=17,20 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.4074 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=16,16 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.8542 microseconds
++ doit /home/guodong/lmbench-3.0-a9/bin/lat_pipe '' '-W 1 -N 4' 21,0 21,4 21,8 21,12 21,16 21,20 20,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/lat_pipe
++ extra_param=
++ param='-W 1 -N 4'
++ shift 3
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=21,0 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.4802 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=21,4 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.7369 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=21,8 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.8377 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=21,12 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.6665 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=21,16 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 11.5132 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=21,20 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 9.9519 microseconds
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=20,20 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
+Pipe latency: 12.0012 microseconds
+guodong@ubuntu:~/wayca-deployer.git/tools$
