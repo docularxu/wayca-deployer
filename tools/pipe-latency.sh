@@ -4,7 +4,7 @@ set -x;
 source base.sh
 
 CMD="/home/guodong/lmbench-3.0-a9/bin/lat_pipe"
-PARAM="-W 10 -N 100" 
+PARAM="-W 1 -N 4"
 EXTRA_PARAM=""
 
 # Benchmark pipe latency between each and every pair of cores from CCL0 to CCL5
