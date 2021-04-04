@@ -1,0 +1,172 @@
+
+guodong@ubuntu:~/wayca-deployer.git/tools$ ./lock-bench.sh
++ COMMAND=/home/guodong/attractivechaos.benchmarks.git/lock/lock_test
++ REPETITION=1
++ (( type=3 ))
++ (( type<=4 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0-3 for lock_type 3, round 1:'
+Benching CPU 0-3 for lock_type 3, round 1:
++ numactl --physcpubind=0-3 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 3
+Function pass time (in seconds):    7.768961
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0-1,4-5 for lock_type 3, round 1:'
+Benching CPU 0-1,4-5 for lock_type 3, round 1:
++ numactl --physcpubind=0-1,4-5 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 3
+Function pass time (in seconds):    8.311939
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0-1,4,8 for lock_type 3, round 1:'
+Benching CPU 0-1,4,8 for lock_type 3, round 1:
++ numactl --physcpubind=0-1,4,8 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 3
+Function pass time (in seconds):   11.792670
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0,4,8,12 for lock_type 3, round 1:'
+Benching CPU 0,4,8,12 for lock_type 3, round 1:
++ numactl --physcpubind=0,4,8,12 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 3
+Function pass time (in seconds):   16.709326
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0,1,24,25 for lock_type 3, round 1:'
+Benching CPU 0,1,24,25 for lock_type 3, round 1:
++ numactl --physcpubind=0,1,24,25 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 3
+Function pass time (in seconds):    9.281340
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0,1,48,49 for lock_type 3, round 1:'
+Benching CPU 0,1,48,49 for lock_type 3, round 1:
++ numactl --physcpubind=0,1,48,49 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 3
+Function pass time (in seconds):    9.238723
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0,1,72,73 for lock_type 3, round 1:'
+Benching CPU 0,1,72,73 for lock_type 3, round 1:
++ numactl --physcpubind=0,1,72,73 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 3
+Function pass time (in seconds):   13.007537
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0,24,48,72 for lock_type 3, round 1:'
+Benching CPU 0,24,48,72 for lock_type 3, round 1:
++ numactl --physcpubind=0,24,48,72 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 3
+Function pass time (in seconds):   29.967935
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ (( type+=1  ))
++ (( type<=4 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0-3 for lock_type 4, round 1:'
+Benching CPU 0-3 for lock_type 4, round 1:
++ numactl --physcpubind=0-3 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 4
+Function pass time (in seconds):    8.894355
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0-1,4-5 for lock_type 4, round 1:'
+Benching CPU 0-1,4-5 for lock_type 4, round 1:
++ numactl --physcpubind=0-1,4-5 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 4
+Function pass time (in seconds):   20.647390
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0-1,4,8 for lock_type 4, round 1:'
+Benching CPU 0-1,4,8 for lock_type 4, round 1:
++ numactl --physcpubind=0-1,4,8 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 4
+Function pass time (in seconds):   19.704743
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0,4,8,12 for lock_type 4, round 1:'
+Benching CPU 0,4,8,12 for lock_type 4, round 1:
++ numactl --physcpubind=0,4,8,12 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 4
+Function pass time (in seconds):   23.600140
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0,1,24,25 for lock_type 4, round 1:'
+Benching CPU 0,1,24,25 for lock_type 4, round 1:
++ numactl --physcpubind=0,1,24,25 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 4
+Function pass time (in seconds):   24.208528
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0,1,48,49 for lock_type 4, round 1:'
+Benching CPU 0,1,48,49 for lock_type 4, round 1:
++ numactl --physcpubind=0,1,48,49 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 4
+Function pass time (in seconds):   44.174179
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0,1,72,73 for lock_type 4, round 1:'
+Benching CPU 0,1,72,73 for lock_type 4, round 1:
++ numactl --physcpubind=0,1,72,73 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 4
+Function pass time (in seconds):   38.956704
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ for cpu_binding in "0-3" "0-1,4-5" "0-1,4,8" "0,4,8,12" "0,1,24,25" "0,1,48,49" "0,1,72,73" "0,24,48,72"
++ (( repetition=1 ))
++ (( repetition<=1 ))
++ echo 'Benching CPU 0,24,48,72 for lock_type 4, round 1:'
+Benching CPU 0,24,48,72 for lock_type 4, round 1:
++ numactl --physcpubind=0,24,48,72 --membind=0 /home/guodong/attractivechaos.benchmarks.git/lock/lock_test -t 4 -n 1000000 -m 100 -l 4
+Function pass time (in seconds):   72.842487
+Hash: 0 (should be 0 if -m is even or aaaaaaaaaaaaaaa if -m is odd)
++ (( repetition+=1  ))
++ (( repetition<=1 ))
++ (( type+=1  ))
++ (( type<=4 ))
+
+
