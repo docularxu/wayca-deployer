@@ -103,7 +103,6 @@ CPU_BINDINGS=(${CPU_BINDINGS_72_NUMA[@]})
 EXTRA_PARAM="-P 72"
 # do it without membind
 doit_no_membind "${CMD}" "${EXTRA_PARAM}" "${PARAM}" "${CPU_BINDINGS[@]}"
-fi
 
 # CPU on NUMA0 ==> Memory on (NUMA0, NUMA1, NUMA2, or NUMA3)
 numactl -C 0,4,8,12 -m 0 /usr/lib/lmbench/bin/stream -P 4 -M 1024M -N 5
@@ -112,7 +111,17 @@ numactl -C 0,1,4,8 -m 1 /usr/lib/lmbench/bin/stream -P 4 -M 1024M -N 5
 numactl -C 0,4,8,12 -m 1 /usr/lib/lmbench/bin/stream -P 4 -M 1024M -N 5
 numactl -C 0,4,8,12 -m 2 /usr/lib/lmbench/bin/stream -P 4 -M 1024M -N 5
 numactl -C 0,4,8,12 -m 3 /usr/lib/lmbench/bin/stream -P 4 -M 1024M -N 5
+fi
 
+# NUMA memory interleave
+# 24 jobs, spread over 1NUMA/ 2NUMA /3NUMA /4NUMA:
+numactl -C 0-23 /usr/lib/lmbench/bin/stream -P 24 -M 1024M -N 5
+numactl -C 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46 -i 0-1 /usr/lib/lmbench/bin/stream -P 24 -M 1024M -N 5
+numactl -C ${CPU_BINDINGS_24_NUMA[1]} -i 0-1 /usr/lib/lmbench/bin/stream -P 24 -M 1024M -N 5
+numactl -C 0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69 -i 0-2 /usr/lib/lmbench/bin/stream -P 24 -M 1024M -N 5
+numactl -C ${CPU_BINDINGS_24_NUMA[2]} -i 0-2 /usr/lib/lmbench/bin/stream -P 24 -M 1024M -N 5
+numactl -C 0,4,8,12,16,20,24,28,32,36,40,44,48,52,56,60,64,68,72,76,80,84,88,92 -i 0-3 /usr/lib/lmbench/bin/stream -P 24 -M 1024M -N 5
+numactl -C ${CPU_BINDINGS_24_NUMA[3]} -i 0-3 /usr/lib/lmbench/bin/stream -P 24 -M 1024M -N 5
 exit
 
 # Stream 8 threads， spread over 2CCL /3CCL /4CCL/ 5CCL /6CCLs:
