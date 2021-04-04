@@ -161,4 +161,15 @@ Pipe latency: 9.9519 microseconds
 + for cpu_binding in "${cpu_bindings[@]}"
 + numactl --physcpubind=20,20 --membind=0 /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 4
 Pipe latency: 12.0012 microseconds
-guodong@ubuntu:~/wayca-deployer.git/tools$
++ CMD=/home/guodong/lmbench-3.0-a9/bin/lat_pipe
++ PARAM='-W 1 -N 4'
++ EXTRA_PARAM=
++ '[' 1 -eq 0 ']'
++ PARAM='-W 1 -N 20'
++ LMBENCH_SCHED='CUSTOM_SPREAD 0 24'
++ /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 20
+Pipe latency: 16.5378 microseconds
++ LMBENCH_SCHED='CUSTOM_SPREAD 0 72'
++ /home/guodong/lmbench-3.0-a9/bin/lat_pipe -W 1 -N 20
+Pipe latency: 18.3354 microseconds
+
