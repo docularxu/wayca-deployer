@@ -1,0 +1,843 @@
+guodong@ubuntu:~/wayca-deployer.git/tools$ ./mem-bandwidth.sh                                                                                                          
++ '[' 1 -eq 1 ']'
++ CMD=/home/guodong/stream/Code/stream.100m.100.openmp
++ PARAM=
++ EXTRA_PARAM=
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ doit /home/guodong/stream/Code/stream.100m.100.openmp '' '' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/stream/Code/stream.100m.100.openmp
++ extra_param=
++ param=
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-3
+0-3
++ numactl --physcpubind=0-3 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 4
+Number of Threads counted = 4
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 93058 microseconds.
+   (= 93058 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:            9114.4     0.176336     0.175546     0.177321
+Scale:           8724.5     0.184003     0.183392     0.185063
+Add:            12360.7     0.194961     0.194164     0.196096
+Triad:          11696.5     0.205725     0.205189     0.216303
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0,1,4,5
+0,1,4,5
++ numactl --physcpubind=0,1,4,5 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 4
+Number of Threads counted = 4
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 92934 microseconds.
+   (= 92934 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:            9135.3     0.176471     0.175145     0.177578
+Scale:           8738.2     0.183934     0.183103     0.185002
+Add:            12510.2     0.192590     0.191844     0.206527
+Triad:          11762.7     0.204467     0.204034     0.205227
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0,1,4,8
+0,1,4,8
++ numactl --physcpubind=0,1,4,8 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 4
+Number of Threads counted = 4
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 92614 microseconds.
+   (= 92614 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:            9084.7     0.177157     0.176121     0.178474
+Scale:           8735.4     0.183948     0.183162     0.184653
+Add:            12476.5     0.192879     0.192361     0.193527
+Triad:          11751.4     0.204679     0.204231     0.205248
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0,4,8,12
+0,4,8,12
++ numactl --physcpubind=0,4,8,12 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 4
+Number of Threads counted = 4
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 92290 microseconds.
+   (= 92290 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:            9092.1     0.176643     0.175976     0.177367
+Scale:           8736.5     0.183741     0.183139     0.184413
+Add:            12466.5     0.193070     0.192516     0.194195
+Triad:          11749.2     0.204661     0.204270     0.205746
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 8,12,16,20
+8,12,16,20
++ numactl --physcpubind=8,12,16,20 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 4
+Number of Threads counted = 4
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 92190 microseconds.
+   (= 92190 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:            9082.0     0.177206     0.176173     0.178549
+Scale:           8708.7     0.184373     0.183724     0.185273
+Add:            12460.1     0.193312     0.192614     0.194241
+Triad:          11707.9     0.205401     0.204990     0.205964
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ OMP_NUM_THREADS=8
++ CPU_BINDINGS=("0-7" "0-2,4-5,8-10" "0-1,4-5,8-9,12-13" "0-1,4,8-9,12,16-17" "0-1,4,8,12-13,16,20")
++ doit /home/guodong/stream/Code/stream.100m.100.openmp '' '' 0-7 0-2,4-5,8-10 0-1,4-5,8-9,12-13 0-1,4,8-9,12,16-17 0-1,4,8,12-13,16,20
++ cmd=/home/guodong/stream/Code/stream.100m.100.openmp
++ extra_param=
++ param=
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-7
+0-7
++ numactl --physcpubind=0-7 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 8
+Number of Threads counted = 8
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 48573 microseconds.
+   (= 48573 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           16961.2     0.095164     0.094333     0.109156
+Scale:          15990.4     0.100476     0.100060     0.100867
+Add:            22151.3     0.108650     0.108346     0.110610
+Triad:          21436.4     0.112328     0.111959     0.112694
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-2,4-5,8-10
+0-2,4-5,8-10
++ numactl --physcpubind=0-2,4-5,8-10 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 8
+Number of Threads counted = 8
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 48483 microseconds.
+   (= 48483 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           16972.7     0.094867     0.094269     0.095745
+Scale:          16020.6     0.100291     0.099871     0.100833
+Add:            22335.3     0.107760     0.107453     0.108236
+Triad:          21561.0     0.111563     0.111312     0.112090
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-1,4-5,8-9,12-13
+0-1,4-5,8-9,12-13
++ numactl --physcpubind=0-1,4-5,8-9,12-13 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 8
+Number of Threads counted = 8
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 48354 microseconds.
+   (= 48354 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           16975.6     0.094860     0.094253     0.095319
+Scale:          15985.0     0.100602     0.100094     0.101317
+Add:            22352.0     0.107717     0.107373     0.108249
+Triad:          21555.0     0.111640     0.111343     0.112088
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-1,4,8-9,12,16-17
+0-1,4,8-9,12,16-17
++ numactl --physcpubind=0-1,4,8-9,12,16-17 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 8
+Number of Threads counted = 8
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 47957 microseconds.
+   (= 47957 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           16930.5     0.095006     0.094504     0.095621
+Scale:          16035.8     0.100161     0.099777     0.101070
+Add:            22354.7     0.107725     0.107360     0.108372
+Triad:          21595.0     0.111657     0.111137     0.131796
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-1,4,8,12-13,16,20
+0-1,4,8,12-13,16,20
++ numactl --physcpubind=0-1,4,8,12-13,16,20 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 8
+Number of Threads counted = 8
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 48064 microseconds.
+   (= 48064 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           16924.8     0.095018     0.094536     0.095534
+Scale:          15974.6     0.100619     0.100159     0.101252
+Add:            22442.1     0.107313     0.106942     0.107672
+Triad:          21644.4     0.111139     0.110883     0.111590
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ OMP_NUM_THREADS=12
++ CPU_BINDINGS=("0-11" "0-2,4-6,8-10,12-14" "0-1,4-6,8-9,12-14,16-17" "0-1,4-5,8-9,12-13,16-17,20-21")
++ doit /home/guodong/stream/Code/stream.100m.100.openmp '' '' 0-11 0-2,4-6,8-10,12-14 0-1,4-6,8-9,12-14,16-17 0-1,4-5,8-9,12-13,16-17,20-21
++ cmd=/home/guodong/stream/Code/stream.100m.100.openmp
++ extra_param=
++ param=
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-11
+0-11
++ numactl --physcpubind=0-11 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 12
+Number of Threads counted = 12
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 35588 microseconds.
+   (= 35588 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           24122.5     0.066800     0.066328     0.067322
+Scale:          22196.0     0.072331     0.072085     0.072688
+Add:            30153.0     0.079782     0.079594     0.080222
+Triad:          29683.5     0.081013     0.080853     0.081520
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-2,4-6,8-10,12-14
+0-2,4-6,8-10,12-14
++ numactl --physcpubind=0-2,4-6,8-10,12-14 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 12
+Number of Threads counted = 12
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 35604 microseconds.
+   (= 35604 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           24046.0     0.066905     0.066539     0.067407
+Scale:          22329.6     0.072077     0.071654     0.074804
+Add:            30219.9     0.079843     0.079418     0.097380
+Triad:          29720.6     0.081024     0.080752     0.081408
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-1,4-6,8-9,12-14,16-17
+0-1,4-6,8-9,12-14,16-17
++ numactl --physcpubind=0-1,4-6,8-9,12-14,16-17 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 12
+Number of Threads counted = 12
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 35312 microseconds.
+   (= 35312 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           24048.2     0.066879     0.066533     0.067346
+Scale:          22318.6     0.072030     0.071689     0.072456
+Add:            30342.6     0.079351     0.079097     0.079640
+Triad:          29897.7     0.080480     0.080274     0.080971
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-1,4-5,8-9,12-13,16-17,20-21
+0-1,4-5,8-9,12-13,16-17,20-21
++ numactl --physcpubind=0-1,4-5,8-9,12-13,16-17,20-21 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 12
+Number of Threads counted = 12
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 34857 microseconds.
+   (= 34857 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           23962.5     0.067169     0.066771     0.067717
+Scale:          22177.0     0.072443     0.072147     0.072839
+Add:            30280.1     0.079501     0.079260     0.079920
+Triad:          29783.4     0.080790     0.080582     0.081063
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ OMP_NUM_THREADS=16
++ CPU_BINDINGS=("0-15" "0-2,4-6,8-10,12-14,16-19" "0-2,4-5,8-10,12-14,16-17,20-22")
++ doit /home/guodong/stream/Code/stream.100m.100.openmp '' '' 0-15 0-2,4-6,8-10,12-14,16-19 0-2,4-5,8-10,12-14,16-17,20-22
++ cmd=/home/guodong/stream/Code/stream.100m.100.openmp
++ extra_param=
++ param=
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-15
+0-15
++ numactl --physcpubind=0-15 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 16
+Number of Threads counted = 16
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 30272 microseconds.
+   (= 30272 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           29983.9     0.053636     0.053362     0.053986
+Scale:          20526.0     0.078380     0.077950     0.079053
+Add:            36282.4     0.066338     0.066148     0.066720
+Triad:          26132.7     0.092175     0.091839     0.092660
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-2,4-6,8-10,12-14,16-19
+0-2,4-6,8-10,12-14,16-19
++ numactl --physcpubind=0-2,4-6,8-10,12-14,16-19 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 16
+Number of Threads counted = 16
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 30114 microseconds.
+   (= 30114 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           30072.9     0.053483     0.053204     0.053809
+Scale:          27523.0     0.058323     0.058133     0.058553
+Add:            36397.3     0.066205     0.065939     0.066659
+Triad:          36411.5     0.066091     0.065913     0.066445
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-2,4-5,8-10,12-14,16-17,20-22
+0-2,4-5,8-10,12-14,16-17,20-22
++ numactl --physcpubind=0-2,4-5,8-10,12-14,16-17,20-22 /home/guodong/stream/Code/stream.100m.100.openmp
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 100000000 (elements), Offset = 0 (elements)
+Memory per array = 762.9 MiB (= 0.7 GiB).
+Total memory required = 2288.8 MiB (= 2.2 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 16
+Number of Threads counted = 16
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 29881 microseconds.
+   (= 29881 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           30147.7     0.053354     0.053072     0.053894
+Scale:          27552.9     0.058298     0.058070     0.058656
+Add:            36530.7     0.065881     0.065698     0.066109
+Triad:          36535.7     0.065839     0.065689     0.066133
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
++ CMD=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ PARAM='20480m bcopy'
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ EXTRA_PARAM='-P 4'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 4' '20480m bcopy' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 4'
++ param='20480m bcopy'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-3
+0-3
++ numactl --physcpubind=0-3 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 20480m bcopy
+21474.84 8390.70
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0,1,4,5
+0,1,4,5
++ numactl --physcpubind=0,1,4,5 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 20480m bcopy
+21474.84 8931.21
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0,1,4,8
+0,1,4,8
++ numactl --physcpubind=0,1,4,8 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 20480m bcopy
+^C
+guodong@ubuntu:~/wayca-deployer.git/tools$ vi mem-bandwidth.sh                                                                                                         
+guodong@ubuntu:~/wayca-deployer.git/tools$ ./mem-bandwidth.sh                                                                                                          
++ '[' 1 -eq 0 ']'
++ CMD=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ PARAM='2048m bcopy'
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ EXTRA_PARAM='-P 4'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 4' '2048m bcopy' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 4'
++ param='2048m bcopy'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-3
+0-3
++ numactl --physcpubind=0-3 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 2048m bcopy
+2147.48 14651.88
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0,1,4,5
+0,1,4,5
++ numactl --physcpubind=0,1,4,5 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 2048m bcopy
+2147.48 17882.82
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0,1,4,8
+0,1,4,8
++ numactl --physcpubind=0,1,4,8 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 2048m bcopy
+2147.48 18239.90
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0,4,8,12
+0,4,8,12
++ numactl --physcpubind=0,4,8,12 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 2048m bcopy
+2147.48 18516.70
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 8,12,16,20
+8,12,16,20
++ numactl --physcpubind=8,12,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 2048m bcopy
+2147.48 18531.67
++ OMP_NUM_THREADS=8
++ CPU_BINDINGS=("0-7" "0-2,4-5,8-10" "0-1,4-5,8-9,12-13" "0-1,4,8-9,12,16-17" "0-1,4,8,12-13,16,20")
++ EXTRA_PARAM='-P 8'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 8' '2048m bcopy' 0-7 0-2,4-5,8-10 0-1,4-5,8-9,12-13 0-1,4,8-9,12,16-17 0-1,4,8,12-13,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 8'
++ param='2048m bcopy'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-7
+0-7
++ numactl --physcpubind=0-7 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 2048m bcopy
+2147.48 22325.20
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-2,4-5,8-10
+0-2,4-5,8-10
++ numactl --physcpubind=0-2,4-5,8-10 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 2048m bcopy
+2147.48 23243.89
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-1,4-5,8-9,12-13
+0-1,4-5,8-9,12-13
++ numactl --physcpubind=0-1,4-5,8-9,12-13 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 2048m bcopy
+2147.48 24052.94
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-1,4,8-9,12,16-17
+0-1,4,8-9,12,16-17
++ numactl --physcpubind=0-1,4,8-9,12,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 2048m bcopy
+2147.48 23966.71
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-1,4,8,12-13,16,20
+0-1,4,8,12-13,16,20
++ numactl --physcpubind=0-1,4,8,12-13,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 2048m bcopy
+2147.48 24210.44
++ OMP_NUM_THREADS=12
++ CPU_BINDINGS=("0-11" "0-2,4-6,8-10,12-14" "0-1,4-6,8-9,12-14,16-17" "0-1,4-5,8-9,12-13,16-17,20-21")
++ EXTRA_PARAM='-P 12'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 12' '2048m bcopy' 0-11 0-2,4-6,8-10,12-14 0-1,4-6,8-9,12-14,16-17 0-1,4-5,8-9,12-13,16-17,20-21
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 12'
++ param='2048m bcopy'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-11
+0-11
++ numactl --physcpubind=0-11 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 2048m bcopy
+2147.48 27376.11
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-2,4-6,8-10,12-14
+0-2,4-6,8-10,12-14
++ numactl --physcpubind=0-2,4-6,8-10,12-14 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 2048m bcopy
+2147.48 28004.56
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-1,4-6,8-9,12-14,16-17
+0-1,4-6,8-9,12-14,16-17
++ numactl --physcpubind=0-1,4-6,8-9,12-14,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 2048m bcopy
+2147.48 28271.71
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-1,4-5,8-9,12-13,16-17,20-21
+0-1,4-5,8-9,12-13,16-17,20-21
++ numactl --physcpubind=0-1,4-5,8-9,12-13,16-17,20-21 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 2048m bcopy
+2147.48 28454.63
++ OMP_NUM_THREADS=16
++ CPU_BINDINGS=("0-15" "0-2,4-6,8-10,12-14,16-19" "0-2,4-5,8-10,12-14,16-17,20-22")
++ EXTRA_PARAM='-P 16'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 16' '2048m bcopy' 0-15 0-2,4-6,8-10,12-14,16-19 0-2,4-5,8-10,12-14,16-17,20-22
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 16'
++ param='2048m bcopy'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-15
+0-15
++ numactl --physcpubind=0-15 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 2048m bcopy
+2147.48 30828.05
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-2,4-6,8-10,12-14,16-19
+0-2,4-6,8-10,12-14,16-19
++ numactl --physcpubind=0-2,4-6,8-10,12-14,16-19 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 2048m bcopy
+2147.48 31401.77
++ for cpu_binding in "${cpu_bindings[@]}"
++ echo 0-2,4-5,8-10,12-14,16-17,20-22
+0-2,4-5,8-10,12-14,16-17,20-22
++ numactl --physcpubind=0-2,4-5,8-10,12-14,16-17,20-22 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 2048m bcopy
+2147.48 31233.63
+guodong@ubuntu:~/wayca-deployer.git/tools$ sdf
+
+Command 'sdf' not found, but can be installed with:
+
+sudo apt install sdf
+:wqa
+

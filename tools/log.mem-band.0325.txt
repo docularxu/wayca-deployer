@@ -1,0 +1,883 @@
++ '[' 1 -eq 0 ']'
++ for what in rd wr rdwr cp fwr frd fcp bzero bcopy
++ CMD=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ PARAM='8192m rd'
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ EXTRA_PARAM='-P 4'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 4' '8192m rd' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 4'
++ param='8192m rd'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-3 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m rd
+8589.93 20711.19
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,5 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m rd
+8589.93 32626.61
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,8 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m rd
+8589.93 36632.84
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,4,8,12 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m rd
+8589.93 42196.91
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=8,12,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m rd
+8589.93 42230.51
++ OMP_NUM_THREADS=8
++ CPU_BINDINGS=("0-7" "0-2,4-5,8-10" "0-1,4-5,8-9,12-13" "0-1,4,8-9,12,16-17" "0-1,4,8,12-13,16,20")
++ EXTRA_PARAM='-P 8'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 8' '8192m rd' 0-7 0-2,4-5,8-10 0-1,4-5,8-9,12-13 0-1,4,8-9,12,16-17 0-1,4,8,12-13,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 8'
++ param='8192m rd'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-7 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m rd
+8589.93 36233.02
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m rd
+8589.93 43622.34
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m rd
+8589.93 60309.84
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8-9,12,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m rd
+8589.93 60679.85
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8,12-13,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m rd
+8589.93 63993.11
++ OMP_NUM_THREADS=12
++ CPU_BINDINGS=("0-11" "0-2,4-6,8-10,12-14" "0-1,4-6,8-9,12-14,16-17" "0-1,4-5,8-9,12-13,16-17,20-21")
++ EXTRA_PARAM='-P 12'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 12' '8192m rd' 0-11 0-2,4-6,8-10,12-14 0-1,4-6,8-9,12-14,16-17 0-1,4-5,8-9,12-13,16-17,20-21
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 12'
++ param='8192m rd'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-11 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m rd
+8589.93 49580.33
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m rd
+8589.93 68176.54
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-6,8-9,12-14,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m rd
+8589.93 71976.38
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13,16-17,20-21 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m rd
+8589.93 73820.81
++ OMP_NUM_THREADS=16
++ CPU_BINDINGS=("0-15" "0-2,4-6,8-10,12-14,16-19" "0-2,4-5,8-10,12-14,16-17,20-22")
++ EXTRA_PARAM='-P 16'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 16' '8192m rd' 0-15 0-2,4-6,8-10,12-14,16-19 0-2,4-5,8-10,12-14,16-17,20-22
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 16'
++ param='8192m rd'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-15 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m rd
+8589.93 66636.79
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14,16-19 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m rd
+8589.93 81122.86
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10,12-14,16-17,20-22 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m rd
+8589.93 77947.22
++ for what in rd wr rdwr cp fwr frd fcp bzero bcopy
++ CMD=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ PARAM='8192m wr'
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ EXTRA_PARAM='-P 4'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 4' '8192m wr' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 4'
++ param='8192m wr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-3 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m wr
+8589.93 18156.81
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,5 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m wr
+8589.93 25333.29
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,8 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m wr
+8589.93 25638.91
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,4,8,12 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m wr
+8589.93 25937.33
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=8,12,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m wr
+8589.93 26103.75
++ OMP_NUM_THREADS=8
++ CPU_BINDINGS=("0-7" "0-2,4-5,8-10" "0-1,4-5,8-9,12-13" "0-1,4,8-9,12,16-17" "0-1,4,8,12-13,16,20")
++ EXTRA_PARAM='-P 8'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 8' '8192m wr' 0-7 0-2,4-5,8-10 0-1,4-5,8-9,12-13 0-1,4,8-9,12,16-17 0-1,4,8,12-13,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 8'
++ param='8192m wr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-7 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m wr
+8589.93 30106.52
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m wr
+8589.93 32814.85
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m wr
+8589.93 33392.52
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8-9,12,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m wr
+8589.93 33501.94
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8,12-13,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m wr
+8589.93 33443.54
++ OMP_NUM_THREADS=12
++ CPU_BINDINGS=("0-11" "0-2,4-6,8-10,12-14" "0-1,4-6,8-9,12-14,16-17" "0-1,4-5,8-9,12-13,16-17,20-21")
++ EXTRA_PARAM='-P 12'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 12' '8192m wr' 0-11 0-2,4-6,8-10,12-14 0-1,4-6,8-9,12-14,16-17 0-1,4-5,8-9,12-13,16-17,20-21
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 12'
++ param='8192m wr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-11 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m wr
+8589.93 33690.93
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m wr
+8589.93 34079.00
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-6,8-9,12-14,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m wr
+8589.93 34193.31
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13,16-17,20-21 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m wr
+8589.93 34281.76
++ OMP_NUM_THREADS=16
++ CPU_BINDINGS=("0-15" "0-2,4-6,8-10,12-14,16-19" "0-2,4-5,8-10,12-14,16-17,20-22")
++ EXTRA_PARAM='-P 16'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 16' '8192m wr' 0-15 0-2,4-6,8-10,12-14,16-19 0-2,4-5,8-10,12-14,16-17,20-22
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 16'
++ param='8192m wr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-15 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m wr
+8589.93 35509.51
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14,16-19 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m wr
+8589.93 37362.19
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10,12-14,16-17,20-22 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m wr
+8589.93 36895.74
++ for what in rd wr rdwr cp fwr frd fcp bzero bcopy
++ CMD=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ PARAM='8192m rdwr'
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ EXTRA_PARAM='-P 4'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 4' '8192m rdwr' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 4'
++ param='8192m rdwr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-3 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m rdwr
+8589.93 17896.36
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,5 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m rdwr
+8589.93 25429.15
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,8 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m rdwr
+8589.93 25947.19
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,4,8,12 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m rdwr
+8589.93 26436.57
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=8,12,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m rdwr
+8589.93 26447.71
++ OMP_NUM_THREADS=8
++ CPU_BINDINGS=("0-7" "0-2,4-5,8-10" "0-1,4-5,8-9,12-13" "0-1,4,8-9,12,16-17" "0-1,4,8,12-13,16,20")
++ EXTRA_PARAM='-P 8'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 8' '8192m rdwr' 0-7 0-2,4-5,8-10 0-1,4-5,8-9,12-13 0-1,4,8-9,12,16-17 0-1,4,8,12-13,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 8'
++ param='8192m rdwr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-7 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m rdwr
+8589.93 30048.50
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m rdwr
+8589.93 32733.59
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m rdwr
+8589.93 33498.33
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8-9,12,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m rdwr
+8589.93 33442.60
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8,12-13,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m rdwr
+8589.93 33549.78
++ OMP_NUM_THREADS=12
++ CPU_BINDINGS=("0-11" "0-2,4-6,8-10,12-14" "0-1,4-6,8-9,12-14,16-17" "0-1,4-5,8-9,12-13,16-17,20-21")
++ EXTRA_PARAM='-P 12'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 12' '8192m rdwr' 0-11 0-2,4-6,8-10,12-14 0-1,4-6,8-9,12-14,16-17 0-1,4-5,8-9,12-13,16-17,20-21
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 12'
++ param='8192m rdwr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-11 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m rdwr
+8589.93 32501.80
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m rdwr
+8589.93 32840.80
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-6,8-9,12-14,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m rdwr
+8589.93 33018.19
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13,16-17,20-21 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m rdwr
+8589.93 33209.37
++ OMP_NUM_THREADS=16
++ CPU_BINDINGS=("0-15" "0-2,4-6,8-10,12-14,16-19" "0-2,4-5,8-10,12-14,16-17,20-22")
++ EXTRA_PARAM='-P 16'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 16' '8192m rdwr' 0-15 0-2,4-6,8-10,12-14,16-19 0-2,4-5,8-10,12-14,16-17,20-22
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 16'
++ param='8192m rdwr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-15 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m rdwr
+8589.93 34996.78
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14,16-19 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m rdwr
+8589.93 36988.78
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10,12-14,16-17,20-22 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m rdwr
+8589.93 36940.74
++ for what in rd wr rdwr cp fwr frd fcp bzero bcopy
++ CMD=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ PARAM='8192m cp'
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ EXTRA_PARAM='-P 4'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 4' '8192m cp' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 4'
++ param='8192m cp'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-3 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m cp
+8589.93 9886.49
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,5 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m cp
+8589.93 15391.09
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,8 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m cp
+8589.93 16635.71
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,4,8,12 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m cp
+8589.93 17433.93
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=8,12,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m cp
+8589.93 17432.65
++ OMP_NUM_THREADS=8
++ CPU_BINDINGS=("0-7" "0-2,4-5,8-10" "0-1,4-5,8-9,12-13" "0-1,4,8-9,12,16-17" "0-1,4,8,12-13,16,20")
++ EXTRA_PARAM='-P 8'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 8' '8192m cp' 0-7 0-2,4-5,8-10 0-1,4-5,8-9,12-13 0-1,4,8-9,12,16-17 0-1,4,8,12-13,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 8'
++ param='8192m cp'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-7 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m cp
+8589.93 15864.98
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m cp
+8589.93 18166.93
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m cp
+8589.93 19968.13
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8-9,12,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m cp
+8589.93 19747.89
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8,12-13,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m cp
+8589.93 21897.83
++ OMP_NUM_THREADS=12
++ CPU_BINDINGS=("0-11" "0-2,4-6,8-10,12-14" "0-1,4-6,8-9,12-14,16-17" "0-1,4-5,8-9,12-13,16-17,20-21")
++ EXTRA_PARAM='-P 12'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 12' '8192m cp' 0-11 0-2,4-6,8-10,12-14 0-1,4-6,8-9,12-14,16-17 0-1,4-5,8-9,12-13,16-17,20-21
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 12'
++ param='8192m cp'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-11 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m cp
+8589.93 9359.38
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m cp
+8589.93 10125.82
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-6,8-9,12-14,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m cp
+8589.93 10666.03
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13,16-17,20-21 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m cp
+8589.93 10193.46
++ OMP_NUM_THREADS=16
++ CPU_BINDINGS=("0-15" "0-2,4-6,8-10,12-14,16-19" "0-2,4-5,8-10,12-14,16-17,20-22")
++ EXTRA_PARAM='-P 16'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 16' '8192m cp' 0-15 0-2,4-6,8-10,12-14,16-19 0-2,4-5,8-10,12-14,16-17,20-22
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 16'
++ param='8192m cp'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-15 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m cp
+8589.93 8357.16
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14,16-19 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m cp
+8589.93 8008.45
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10,12-14,16-17,20-22 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m cp
+8589.93 8200.47
++ for what in rd wr rdwr cp fwr frd fcp bzero bcopy
++ CMD=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ PARAM='8192m fwr'
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ EXTRA_PARAM='-P 4'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 4' '8192m fwr' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 4'
++ param='8192m fwr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-3 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m fwr
+8589.93 11698.80
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,5 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m fwr
+8589.93 11877.93
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,8 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m fwr
+8589.93 12028.12
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,4,8,12 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m fwr
+8589.93 12003.68
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=8,12,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m fwr
+8589.93 11907.64
++ OMP_NUM_THREADS=8
++ CPU_BINDINGS=("0-7" "0-2,4-5,8-10" "0-1,4-5,8-9,12-13" "0-1,4,8-9,12,16-17" "0-1,4,8,12-13,16,20")
++ EXTRA_PARAM='-P 8'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 8' '8192m fwr' 0-7 0-2,4-5,8-10 0-1,4-5,8-9,12-13 0-1,4,8-9,12,16-17 0-1,4,8,12-13,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 8'
++ param='8192m fwr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-7 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m fwr
+8589.93 20052.99
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m fwr
+8589.93 20347.43
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m fwr
+8589.93 20526.19
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8-9,12,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m fwr
+8589.93 20709.82
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8,12-13,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m fwr
+8589.93 20749.26
++ OMP_NUM_THREADS=12
++ CPU_BINDINGS=("0-11" "0-2,4-6,8-10,12-14" "0-1,4-6,8-9,12-14,16-17" "0-1,4-5,8-9,12-13,16-17,20-21")
++ EXTRA_PARAM='-P 12'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 12' '8192m fwr' 0-11 0-2,4-6,8-10,12-14 0-1,4-6,8-9,12-14,16-17 0-1,4-5,8-9,12-13,16-17,20-21
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 12'
++ param='8192m fwr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-11 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m fwr
+8589.93 23776.30
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m fwr
+8589.93 23857.66
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-6,8-9,12-14,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m fwr
+8589.93 24217.97
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13,16-17,20-21 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m fwr
+8589.93 24512.76
++ OMP_NUM_THREADS=16
++ CPU_BINDINGS=("0-15" "0-2,4-6,8-10,12-14,16-19" "0-2,4-5,8-10,12-14,16-17,20-22")
++ EXTRA_PARAM='-P 16'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 16' '8192m fwr' 0-15 0-2,4-6,8-10,12-14,16-19 0-2,4-5,8-10,12-14,16-17,20-22
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 16'
++ param='8192m fwr'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-15 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m fwr
+8589.93 26500.63
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14,16-19 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m fwr
+8589.93 28142.13
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10,12-14,16-17,20-22 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m fwr
+8589.93 28412.00
++ for what in rd wr rdwr cp fwr frd fcp bzero bcopy
++ CMD=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ PARAM='8192m frd'
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ EXTRA_PARAM='-P 4'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 4' '8192m frd' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 4'
++ param='8192m frd'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-3 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m frd
+8589.93 20197.97
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,5 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m frd
+8589.93 32102.66
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,8 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m frd
+8589.93 34762.90
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,4,8,12 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m frd
+8589.93 37844.60
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=8,12,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m frd
+8589.93 37874.49
++ OMP_NUM_THREADS=8
++ CPU_BINDINGS=("0-7" "0-2,4-5,8-10" "0-1,4-5,8-9,12-13" "0-1,4,8-9,12,16-17" "0-1,4,8,12-13,16,20")
++ EXTRA_PARAM='-P 8'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 8' '8192m frd' 0-7 0-2,4-5,8-10 0-1,4-5,8-9,12-13 0-1,4,8-9,12,16-17 0-1,4,8,12-13,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 8'
++ param='8192m frd'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-7 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m frd
+8589.93 35484.40
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m frd
+8589.93 42851.33
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m frd
+8589.93 60344.27
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8-9,12,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m frd
+8589.93 61492.54
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8,12-13,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m frd
+8589.93 64172.02
++ OMP_NUM_THREADS=12
++ CPU_BINDINGS=("0-11" "0-2,4-6,8-10,12-14" "0-1,4-6,8-9,12-14,16-17" "0-1,4-5,8-9,12-13,16-17,20-21")
++ EXTRA_PARAM='-P 12'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 12' '8192m frd' 0-11 0-2,4-6,8-10,12-14 0-1,4-6,8-9,12-14,16-17 0-1,4-5,8-9,12-13,16-17,20-21
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 12'
++ param='8192m frd'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-11 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m frd
+8589.93 48718.97
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m frd
+8589.93 66936.73
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-6,8-9,12-14,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m frd
+8589.93 71758.00
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13,16-17,20-21 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m frd
+8589.93 74386.89
++ OMP_NUM_THREADS=16
++ CPU_BINDINGS=("0-15" "0-2,4-6,8-10,12-14,16-19" "0-2,4-5,8-10,12-14,16-17,20-22")
++ EXTRA_PARAM='-P 16'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 16' '8192m frd' 0-15 0-2,4-6,8-10,12-14,16-19 0-2,4-5,8-10,12-14,16-17,20-22
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 16'
++ param='8192m frd'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-15 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m frd
+8589.93 66984.15
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14,16-19 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m frd
+8589.93 80570.16
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10,12-14,16-17,20-22 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m frd
+8589.93 78514.92
++ for what in rd wr rdwr cp fwr frd fcp bzero bcopy
++ CMD=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ PARAM='8192m fcp'
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ EXTRA_PARAM='-P 4'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 4' '8192m fcp' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 4'
++ param='8192m fcp'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-3 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m fcp
+8589.93 15177.47
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,5 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m fcp
+8589.93 19950.49
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,8 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m fcp
+8589.93 20368.56
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,4,8,12 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m fcp
+8589.93 20709.14
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=8,12,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m fcp
+8589.93 20752.06
++ OMP_NUM_THREADS=8
++ CPU_BINDINGS=("0-7" "0-2,4-5,8-10" "0-1,4-5,8-9,12-13" "0-1,4,8-9,12,16-17" "0-1,4,8,12-13,16,20")
++ EXTRA_PARAM='-P 8'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 8' '8192m fcp' 0-7 0-2,4-5,8-10 0-1,4-5,8-9,12-13 0-1,4,8-9,12,16-17 0-1,4,8,12-13,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 8'
++ param='8192m fcp'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-7 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m fcp
+8589.93 22327.64
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m fcp
+8589.93 24542.35
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m fcp
+8589.93 26149.56
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8-9,12,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m fcp
+8589.93 29687.36
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8,12-13,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m fcp
+8589.93 29221.91
++ OMP_NUM_THREADS=12
++ CPU_BINDINGS=("0-11" "0-2,4-6,8-10,12-14" "0-1,4-6,8-9,12-14,16-17" "0-1,4-5,8-9,12-13,16-17,20-21")
++ EXTRA_PARAM='-P 12'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 12' '8192m fcp' 0-11 0-2,4-6,8-10,12-14 0-1,4-6,8-9,12-14,16-17 0-1,4-5,8-9,12-13,16-17,20-21
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 12'
++ param='8192m fcp'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-11 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m fcp
+8589.93 10932.59
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m fcp
+8589.93 11499.79
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-6,8-9,12-14,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m fcp
+8589.93 11763.72
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13,16-17,20-21 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m fcp
+8589.93 11735.91
++ OMP_NUM_THREADS=16
++ CPU_BINDINGS=("0-15" "0-2,4-6,8-10,12-14,16-19" "0-2,4-5,8-10,12-14,16-17,20-22")
++ EXTRA_PARAM='-P 16'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 16' '8192m fcp' 0-15 0-2,4-6,8-10,12-14,16-19 0-2,4-5,8-10,12-14,16-17,20-22
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 16'
++ param='8192m fcp'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-15 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m fcp
+8589.93 9420.17
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14,16-19 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m fcp
+8589.93 10147.35
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10,12-14,16-17,20-22 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m fcp
+8589.93 11218.64
++ for what in rd wr rdwr cp fwr frd fcp bzero bcopy
++ CMD=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ PARAM='8192m bzero'
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ EXTRA_PARAM='-P 4'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 4' '8192m bzero' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 4'
++ param='8192m bzero'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-3 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m bzero
+8589.93 56790.55
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,5 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m bzero
+8589.93 79273.21
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,8 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m bzero
+8589.93 77489.98
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,4,8,12 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m bzero
+8589.93 79855.08
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=8,12,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m bzero
+8589.93 71342.84
++ OMP_NUM_THREADS=8
++ CPU_BINDINGS=("0-7" "0-2,4-5,8-10" "0-1,4-5,8-9,12-13" "0-1,4,8-9,12,16-17" "0-1,4,8,12-13,16,20")
++ EXTRA_PARAM='-P 8'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 8' '8192m bzero' 0-7 0-2,4-5,8-10 0-1,4-5,8-9,12-13 0-1,4,8-9,12,16-17 0-1,4,8,12-13,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 8'
++ param='8192m bzero'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-7 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m bzero
+8589.93 79554.55
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m bzero
+8589.93 79484.49
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m bzero
+8589.93 79490.43
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8-9,12,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m bzero
+8589.93 60226.41
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8,12-13,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m bzero
+8589.93 66496.99
++ OMP_NUM_THREADS=12
++ CPU_BINDINGS=("0-11" "0-2,4-6,8-10,12-14" "0-1,4-6,8-9,12-14,16-17" "0-1,4-5,8-9,12-13,16-17,20-21")
++ EXTRA_PARAM='-P 12'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 12' '8192m bzero' 0-11 0-2,4-6,8-10,12-14 0-1,4-6,8-9,12-14,16-17 0-1,4-5,8-9,12-13,16-17,20-21
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 12'
++ param='8192m bzero'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-11 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m bzero
+8589.93 79803.17
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m bzero
+8589.93 79711.40
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-6,8-9,12-14,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m bzero
+8589.93 71605.39
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13,16-17,20-21 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m bzero
+8589.93 74134.46
++ OMP_NUM_THREADS=16
++ CPU_BINDINGS=("0-15" "0-2,4-6,8-10,12-14,16-19" "0-2,4-5,8-10,12-14,16-17,20-22")
++ EXTRA_PARAM='-P 16'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 16' '8192m bzero' 0-15 0-2,4-6,8-10,12-14,16-19 0-2,4-5,8-10,12-14,16-17,20-22
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 16'
++ param='8192m bzero'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-15 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m bzero
+8589.93 76983.11
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14,16-19 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m bzero
+8589.93 78476.30
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10,12-14,16-17,20-22 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m bzero
+8589.93 66580.76
++ for what in rd wr rdwr cp fwr frd fcp bzero bcopy
++ CMD=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ PARAM='8192m bcopy'
++ OMP_NUM_THREADS=4
++ CPU_BINDINGS=("0-3" "0,1,4,5" "0,1,4,8" "0,4,8,12" "8,12,16,20")
++ EXTRA_PARAM='-P 4'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 4' '8192m bcopy' 0-3 0,1,4,5 0,1,4,8 0,4,8,12 8,12,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 4'
++ param='8192m bcopy'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-3 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m bcopy
+8589.93 14693.87
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,5 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m bcopy
+8589.93 17954.91
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,1,4,8 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m bcopy
+8589.93 18315.92
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0,4,8,12 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m bcopy
+8589.93 18639.08
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=8,12,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 4 8192m bcopy
+8589.93 18623.07
++ OMP_NUM_THREADS=8
++ CPU_BINDINGS=("0-7" "0-2,4-5,8-10" "0-1,4-5,8-9,12-13" "0-1,4,8-9,12,16-17" "0-1,4,8,12-13,16,20")
++ EXTRA_PARAM='-P 8'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 8' '8192m bcopy' 0-7 0-2,4-5,8-10 0-1,4-5,8-9,12-13 0-1,4,8-9,12,16-17 0-1,4,8,12-13,16,20
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 8'
++ param='8192m bcopy'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-7 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m bcopy
+8589.93 20444.92
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m bcopy
+8589.93 21352.80
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m bcopy
+8589.93 21799.61
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8-9,12,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m bcopy
+8589.93 22321.85
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4,8,12-13,16,20 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 8 8192m bcopy
+8589.93 22865.43
++ OMP_NUM_THREADS=12
++ CPU_BINDINGS=("0-11" "0-2,4-6,8-10,12-14" "0-1,4-6,8-9,12-14,16-17" "0-1,4-5,8-9,12-13,16-17,20-21")
++ EXTRA_PARAM='-P 12'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 12' '8192m bcopy' 0-11 0-2,4-6,8-10,12-14 0-1,4-6,8-9,12-14,16-17 0-1,4-5,8-9,12-13,16-17,20-21
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 12'
++ param='8192m bcopy'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-11 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m bcopy
+8589.93 10771.22
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m bcopy
+8589.93 13493.13
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-6,8-9,12-14,16-17 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m bcopy
+8589.93 11607.53
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-1,4-5,8-9,12-13,16-17,20-21 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 12 8192m bcopy
+8589.93 11606.70
++ OMP_NUM_THREADS=16
++ CPU_BINDINGS=("0-15" "0-2,4-6,8-10,12-14,16-19" "0-2,4-5,8-10,12-14,16-17,20-22")
++ EXTRA_PARAM='-P 16'
++ doit /home/guodong/lmbench-3.0-a9/bin/bw_mem '-P 16' '8192m bcopy' 0-15 0-2,4-6,8-10,12-14,16-19 0-2,4-5,8-10,12-14,16-17,20-22
++ cmd=/home/guodong/lmbench-3.0-a9/bin/bw_mem
++ extra_param='-P 16'
++ param='8192m bcopy'
++ shift
++ shift
++ shift
++ cpu_bindings=("$@")
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-15 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m bcopy
+8589.93 10049.45
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-6,8-10,12-14,16-19 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m bcopy
+8589.93 9237.79
++ for cpu_binding in "${cpu_bindings[@]}"
++ numactl --physcpubind=0-2,4-5,8-10,12-14,16-17,20-22 /home/guodong/lmbench-3.0-a9/bin/bw_mem -P 16 8192m bcopy
+8589.93 9345.41
