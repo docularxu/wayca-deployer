@@ -21,7 +21,7 @@ do
 	for (( repetition=1; repetition<=$REPETITION; repetition+=1 ))
 	do
 		echo "Benching CPU $cpu_binding for lock_type $type, round $repetition:"
-		numactl --physcpubind=$cpu_binding --membind=0 $COMMAND -t 4 -n 1000000 -m 100 -l $type  2>&1
+		numactl --physcpubind=$cpu_binding $COMMAND -t 4 -n 1000000 -m 100 -l $type  2>&1
 	done
 done
 done
